@@ -107,5 +107,5 @@ You can find the Detailed Report of the CNN Model in this folder [CNN Model](CNN
 ----------------------------
 
 ## Feedback
-If you have any feedback, please reach out to us at mukutamanitd6@gmail.com .
+If you have any feedback, please reach out me at mukutamanitd6@gmail.com .
 You are also welcomed to add new features by creating Pull Requests.
