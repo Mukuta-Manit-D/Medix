@@ -29,37 +29,6 @@ Python 3.11.3 (Recommended)
 You can find all the Modules Imported in the app.py [Here](requirements.txt)
 
 -------------------------
-
-## How to run?
-- Download a Zip file or clone  the Project using 
-
-```bash
-https://github.com/Mukuta-Manit-D/Medix.git
-```
-<br>
-
-- UnZip the file or check the cloned Project for all the files.
-
-<br>
-
-- Install all the requirements (Modules) using [requirements.txt](requirements.txt) by
-```bash
-pip install -r requirements.txt
-```
-
-<br>
-
-- Replace the MongoDB String, Database Name, Collection Name with Actual Values in [app.py](app.py)
-
-<br>
-
-- Run the project using app.py by
-```bash
-python app.py
-```
-
-<br>
-
 - For Demonstration you can use X-ray or CT Scan Images present in the Test Datasets
 
 ```bash
