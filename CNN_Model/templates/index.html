@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Image Classification Web App</title>
+  </head>
+  <body>
+    <h1>Image Classification</h1>
+    <form action="/classify" method="POST" enctype="multipart/form-data">
+      <input type="file" name="image" accept="image/*" />
+      <input type="submit" value="Submit" />
+    </form>
+    <h2>Result: <span id="result"></span></h2>
+
+    <script>
+      document.querySelector("form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        var form = document.querySelector("form");
+        var formData = new FormData(form);
+
+        fetch("/classify", {
+          method: "POST",
+          body: formData,
+        })
+          .then(function (response) {
+            return response.text();
+          })
+          .then(function (result) {
+            document.getElementById("result").innerText = result;
+          })
+          .catch(function (error) {
+            console.error("Error:", error);
+          });
+      });
+    </script>
+  </body>
+</html>
