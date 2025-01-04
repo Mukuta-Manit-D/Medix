@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/Logo_IMG_BR.png') }}" />
+  <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/Logo_IMG_BR.png') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/about.css') }}" />
+  <title>Medix</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <section class="size">
+    <div class="menu-wrap">
+      <input type="checkbox" class="toggler" />
+      <div class="hamburger">
+        <div></div>
+      </div>
+      <div class="menu">
+        <div>
+        <div>
+          <ul>
+            <li><a href="{{ url_for('about') }}">About Us</a></li>
+            <li><a href="{{ url_for('homepage') }}">Home</a></li>
+            <li><a href="{{ url_for('report') }}">Report</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <div>
+      <img src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logo" />
+    </div>
+    <div class="right-buttons">
+      <a href="{{ url_for('about') }}">About Us</a>
+      <a href="{{ url_for('homepage') }}">Home</a>
+      <a href="{{ url_for('report') }}">Report</a>
+    </div>
+  </div>
+
+  <div class="heading-container fade-in">
+    <h2 class="innovative-heading">ABOUT US</h2>
+  </div>
+
+  <div class="container">
+    <div class="about-content">
+      <h2>About Medix - Empowering Medical Diagnosis with AI</h2>
+      <p>
+        Welcome to Medix, an innovative platform that combines the power of
+        deep learning with advanced medical imaging technology to assist
+        doctors and medical professionals in diagnosing lung-related
+        abnormalities and brain tumors. Our mission is to enhance the accuracy
+        and efficiency of medical diagnosis, enabling early detection and
+        timely treatment of various medical conditions.
+      </p>
+
+      <div class="vision-section">
+        <h2>Our Vision</h2>
+        <p>
+          At Medix, we envision a future where cutting-edge technology and
+          medical expertise come together to revolutionize healthcare. By
+          harnessing the potential of artificial intelligence and machine
+          learning, we aim to empower medical professionals with an
+          intelligent tool that aids in the early detection of lung diseases
+          and brain tumors, ultimately leading to better patient outcomes and
+          improved quality of life.
+        </p>
+      </div>
+
+      <div class="vision-section">
+        <h2>How Medix Works:</h2>
+        <p>
+          Medix employs state-of-the-art deep learning models that have been
+          meticulously trained on an extensive dataset of X-ray and CT scan
+          images. These models are capable of classifying images into 18
+          different categories, covering a wide range of lung-related
+          abnormalities and brain tumors. With the click of a button, medical
+          practitioners can upload an image, and our advanced AI system will
+          swiftly analyze it, providing an accurate prediction of the observed
+          abnormality.
+        </p>
+      </div>
+
+      <div class="vision-section">
+        <h3>
+          The Model is capable of Classifying the Images into 18 Different
+          classes Namely
+        </h3>
+        <ul class="class-list">
+          <li><span class="class-code">X-001:</span> Atelectasis</li>
+          <li><span class="class-code">X-002:</span> Brain_Tumor</li>
+          <li><span class="class-code">X-003:</span> Cardiomegaly</li>
+          <li><span class="class-code">X-004:</span> Consolidation</li>
+          <li><span class="class-code">X-005:</span> Edema</li>
+          <li><span class="class-code">X-006:</span> Effusion</li>
+          <li><span class="class-code">X-007:</span> Emphysema</li>
+          <li><span class="class-code">X-008:</span> Fibrosis</li>
+          <li><span class="class-code">X-009:</span> Hernia</li>
+          <li><span class="class-code">X-010:</span> Infiltration</li>
+          <li><span class="class-code">X-011:</span> Mass</li>
+          <li><span class="class-code">X-012:</span> No_Brain_Finding</li>
+          <li><span class="class-code">X-013:</span> No_Lung_Finding</li>
+          <li><span class="class-code">X-014:</span> Nodule</li>
+          <li><span class="class-code">X-015:</span> Pleural</li>
+          <li><span class="class-code">X-016:</span> Pneumonia</li>
+          <li><span class="class-code">X-017:</span> Pneumothorax</li>
+          <li><span class="class-code">X-018:</span> Tuberculosis</li>
+        </ul>
+      </div>
+
+      <div class="vision-section">
+        <h2>Data Privacy and Security:</h2>
+        <p>
+          At Medix, we place utmost importance on patient privacy and data
+          security. All uploaded images and patient information are handled
+          with strict confidentiality and compliance with data protection
+          regulations. We use secure encryption protocols to safeguard data
+          transmission and follow industry best practices to ensure your
+          sensitive information remains safe.
+        </p>
+      </div>
+
+      <div class="vision-section">
+        <h2>Our Commitment:</h2>
+        <p>
+          Medix is dedicated to continuously improving and refining our deep
+          learning models to achieve the highest levels of accuracy and
+          reliability. We collaborate with medical experts and researchers to
+          validate our results and refine our algorithms to provide the most
+          accurate and dependable diagnoses.
+        </p>
+      </div>
+
+      <div class="vision-section">
+        <h2>Collaborate with Us:</h2>
+        <p>
+          We welcome partnerships and collaborations with medical
+          institutions, healthcare professionals, and research organizations.
+          By working together, we can further enhance the capabilities of our
+          AI-powered system and make a significant impact on medical
+          diagnostics and patient care.
+        </p>
+      </div>
+
+      <div class="vision-section">
+        <h2>Get Started:</h2>
+        <p>
+          Experience the potential of AI in medical diagnosis today. upload
+          your images, and let Medix assist you in making well-informed
+          medical decisions for your patients.
+        </p>
+      </div>
+
+      <div class="vision-section">
+        <h2>Developer:</h2>
+        <ul>
+          <li><b>Mukuta Manit D</b></li>
+        </ul>
+      </div>
+
+      <div class="vision-section">
+        <h2>Contact Us:</h2>
+        <p>
+          For any inquiries or partnership opportunities, please reach out to
+          our team at <span class="bold"><a
+              href="https://mail.google.com/mail/u/0/?to=mukutamanitd6@gmail.com&fs=1&tf=cm"
+              target="_blank">mukutamanitd6@gmail.com</a></span>. We look forward to
+          collaborating with you in advancing the future of medical diagnosis.
+        </p>
+        <p style="margin-top: 10px">
+          Together, let's shape the future of healthcare with Medix.
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

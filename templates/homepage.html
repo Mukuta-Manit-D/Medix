@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/Logo_IMG_BR.png') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/homepage.css') }}" />
+  <title>Medix</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+
+<body>
+  <!-- Hamburger Menu -->
+  <section class="size">
+    <div class="menu-wrap">
+      <input type="checkbox" class="toggler" />
+      <div class="hamburger">
+        <div></div>
+      </div>
+      <div class="menu">
+        <div>
+        <div>
+            <ul>
+              <li><a href="{{ url_for('about') }}">About Us</a></li>
+              <li><a href="{{ url_for('homepage') }}">Home</a></li>
+              <li><a href="{{ url_for('report') }}">Report</a></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <div>
+      <img src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logo" />
+    </div>
+    <div class="right-buttons">
+      <a href="{{ url_for('about') }}">About Us</a>
+      <a href="{{ url_for('homepage') }}">Home</a>
+      <a href="{{ url_for('report') }}">Report</a>
+    </div>
+  </div>
+
+  <br/><br/><br/><br/><br/>
+
+  <div>
+    <!-- Left Section - Creative Registration Form -->
+    <form id="form" name="form" action="/upload" method="post" enctype="multipart/form-data">
+
+      <div class="left-section">
+        <br /><br /><br />
+        <div class="container">
+
+          <h2>Registration Form</h2>
+          
+
+          <div class="form-group">
+            <label for="name">Patient Name:</label>
+            <input type="text" id="patient_name" name="patient_name" autocomplete="off" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Patient ID:</label>
+            <input type="text" id="patient_id" name="patient_id" />
+          </div>
+        </div>
+      </div></form>
+
+        
+      </div>
+
+      <!-- Right Section - Upload -->
+      <div class="right-section">
+
+        <h2>Upload</h2>
+        <form>
+          
+        <label for="image" class="file-label" style="text-align: center; font-size: medium">Choose File</label>
+        <input type="file" id="image" name="image" class="hidden-input" onchange="toggleSubmitButton()" /><br>
+        <span id="fileNameDisplay" class="file-name-display">No file chosen</span>
+
+        <div class="form-group" style="margin-top:5px">
+          <button class="button" type="button" id="submit_button" onclick="submitImage()"
+            style="width: 15%; height: 35px;">Submit</button>
+        </div>
+
+        <div class="form-group">
+          <div class="output-box"><div id="result" name="result" ></div></div>
+        </div>
+
+        <div class="form-group">
+          <button type="button" id="save_button" onclick="saveImage()"
+            style="width: 40%;">Save</button>
+          <button type="button" id="clear_button" onclick="clearFields()"
+            style="width: 40%; ">Clear</button>
+        </div>
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="{{ url_for('static', filename='js/homepage.js') }}"></script>
+</body>
+
+</html>

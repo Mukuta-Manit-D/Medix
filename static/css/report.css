@@ -1,0 +1,379 @@
+:root {
+  --overlay-color: rgba(24, 39, 51, 0.85);
+  --menu-speed: 0.75s;
+}
+body {
+  background-image: url("../images/reportbg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: "Poppins", sans-serif;
+  color: #00004d;
+  margin: 0;
+  padding: 0;
+}
+
+/* CSS for the navigation bar */
+.navbar {
+  background-color: #0076f5;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index:999;
+}
+
+.navbar img {
+  height: 50px;
+  width: 150px;
+  margin-top: 0.7rem;
+  margin-left: 0.5rem;
+}
+
+.navbar .right-buttons {
+  margin-right: 40px;
+}
+
+.navbar a {
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  transition: font-size 0.2s ease; /* Reduced transition duration */
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.navbar a:hover {
+  background-color: black;
+  color: black;
+  background-color: #ffffff00;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+.menu-wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9991;
+}
+
+.menu-wrap .toggler {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 9992;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+}
+
+.menu-wrap .hamburger {
+  width: 60px;
+  height: 60px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+/* Hamburger Line */
+.menu-wrap .hamburger > div {
+  position: relative;
+  flex: none;
+  width: 30px;
+  height: 2px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+/* Hamburger Lines - Top & Bottom */
+.menu-wrap .hamburger > div::before,
+.menu-wrap .hamburger > div::after {
+  content: "";
+  position: absolute;
+  z-index: 99999;
+  top: -10px;
+  width: 30px;
+  height: 2px;
+  background: inherit;
+}
+
+/* Moves Line Down */
+.menu-wrap .hamburger > div::after {
+  top: 10px;
+}
+
+/* Toggler Animation */
+.menu-wrap .toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
+}
+
+/* Turns Lines Into X */
+.menu-wrap .toggler:checked + .hamburger > div:before,
+.menu-wrap .toggler:checked + .hamburger > div:after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+/* Rotate On Hover When Checked */
+.menu-wrap .toggler:checked:hover + .hamburger > div {
+  transform: rotate(225deg);
+}
+
+/* Show Menu */
+.menu-wrap .toggler:checked ~ .menu {
+  visibility: visible;
+  z-index: 0; /* Move the menu behind the toggler button */
+}
+
+.menu-wrap .toggler:checked ~ .menu > div {
+  transform: scale(1);
+  transition-duration: var(--menu-speed);
+}
+
+.menu-wrap .toggler:checked ~ .menu > div > div {
+  opacity: 1;
+  transition: opacity 0.4s ease 0.4s;
+}
+
+.menu-wrap .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-wrap .menu > div {
+  background: var(--overlay-color);
+  border-radius: 50%;
+  width: 200vw;
+  height: 200vw;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  transition: all 0.4s ease;
+}
+
+.menu-wrap .menu > div > div {
+  text-align: center;
+  max-width: 90vw;
+  max-height: 100vh;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.menu-wrap .menu > div > div > ul > li {
+  list-style: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.menu-wrap .menu > div > div > ul > li > a {
+  color: inherit;
+  text-decoration:none;
+  transition: color 0.4s ease;
+}
+
+.menu-wrap {
+  display: none;
+}
+
+/* CSS for the divisions */
+.left-section,
+.right-section {
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+  float: left;
+}
+
+.left-section {
+  background-color: #ffffff00;
+}
+
+.container {
+  margin-top: 2.5rem;
+  margin-left: auto;
+  max-width: 500px;
+  /* margin: 0 auto; */
+  padding: 40px;
+  background-color: #ffffff3a;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  height: 28rem;
+}
+
+.container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #3da4f8;
+  font-size: 16px;
+  background-color: #3da4f856;
+  outline: none;
+  color: #000;
+}
+
+.form-group input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #2a51ef;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-group input[type="submit"]:hover {
+  background-color: blue;
+  text-decoration: none !important;
+}
+.right-section h1{
+  color:white;
+  margin-top:0;
+}
+.navbar a {
+  transition: all 0.3s ease;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+}
+.report-item {
+  margin-left: 0;
+  display: flex;
+  align-items: flex-start;
+}
+.error-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2); /* Glass effect background */
+  backdrop-filter: blur(5px); /* Glass effect blur */
+  border: 1px solid rgba(255, 255, 255, 0.4); /* Border for glass effect */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width:30rem;
+  height: 30rem;
+}
+
+.error-box p {
+  color: rgb(212, 0, 0);
+  font-size: 30px;
+  font-weight: bolder;
+  margin: 0; /* Remove default margin for <p> */
+}
+
+.download-button {
+  background-color: #0076f5;
+  padding:10px;
+  border-radius: 10px;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.download-button:hover {
+  background-color: #005ab2; /* Change the color on hover */
+}
+.form-group h3{
+  color: #ffffff;
+}
+/* Additional CSS for mobile responsiveness */
+@media screen and (max-width: 768px) {
+  body {
+    background-size: auto;
+  }
+
+  .navbar img {
+    margin-left: 0;
+    margin-bottom: 10px;
+    margin-left: 0.5rem;
+  }
+  .right-buttons {
+    display: none;
+  }
+  .menu-wrap {
+    display: block;
+  }
+  
+  .left-section,
+  .right-section {
+    margin-left: 0;
+    margin-right: 1rem;
+    width: 100%;
+    float: none;
+  }
+
+  .container {
+    padding: 20px;
+    margin: 20px;
+  }
+  .error-box{
+    width:auto;
+  }
+  .form-group input[type="text"],
+  .form-group input[type="date"] {
+    width: 100%;
+    padding-right: 15px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .form-group input[type="submit"] {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .right-section{
+    margin-left:0;
+  }
+}

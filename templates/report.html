@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/Logo_IMG_BR.png') }}" />
+  <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/Logo_IMG_BR.png') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/report.css') }}" />
+  <title>Medix</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  
+  <section class="size">
+    <div class="menu-wrap">
+      <input type="checkbox" class="toggler" />
+      <div class="hamburger">
+        <div></div>
+      </div>
+      <div class="menu">
+        <div>
+        <div>
+          <ul>
+            <li><a href="{{ url_for('about') }}">About Us</a></li>
+            <li><a href="{{ url_for('homepage') }}">Home</a></li>
+            <li><a href="{{ url_for('report') }}">Report</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <div>
+      <img src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logo" />
+    </div>
+    <div class="right-buttons">
+      <a href="{{ url_for('about') }}">About Us</a>
+      <a href="{{ url_for('homepage') }}">Home</a>
+      <a href="{{ url_for('report') }}">Report</a>
+    </div>
+  </div>
+  <br/><br/><br/>
+  <!-- Left Section - Creative Registration Form -->
+
+  <div class="left-section">
+    <br /><br />
+    <div class="container">
+      <h2>Enter details</h2>
+
+      <form method="POST" action="/report_analysis" onsubmit="return displayImage();" >
+
+        <div class="form-group">
+          <label for="patient_name">Patient Name:</label>
+          <input type="text" id="patient_name" name="patient_name" autocomplete="off" required/>
+        </div>
+
+        <div class="form-group">
+          <label for="patient_id">Patient ID:</label>
+          <input type="text" id="patient_id" name="patient_id" autocomplete="off" required/>
+        </div>
+
+        <div class="form-group">
+          <div class="date-input-container">
+            <label for="calendarDate">Date:</label>
+            <input type="date" id="calendarDate" name="calendarDate" placeholder="Choose date" required/>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top: 5px">
+          <input type="submit" value="Submit" style="width: 100%; height: 35px;margin-top: 2rem;" />
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- Right Section - Upload -->
+  <div class="right-section">
+    <br />
+    <h1>Report</h1>
+
+    <div class="form-group">
+      <div class="error-box">
+      {% if error %}
+    <div class="box center"><p style="color: rgb(212, 0, 0); font-size: 30px; font-weight: bolder;">{{ error }}</p></div>
+      {% endif %}
+     
+
+      {% if image %}
+      <div class="box">
+        <div class="report-info">
+        <h3 class="report-item">Patient ID: {{ patient_id }}</h3>
+        <h3 class="report-item">Patient Name: {{ patient_name }}</h3>
+        <h3 class="report-item">Symptoms: {{symptoms}}</h3>
+      </div>
+        <img id="image" src="data:image/png;base64,{{ image }}" alt="Image" height="240px" width="240px">
+        <br>
+        <div class="download-box">
+        <a href="data:image/png;base64,{{ image }}" download="image_{{ patient_id }}.png">
+          <button class="download-button">Download Image</button></a></div></div>
+      {% endif %}
+    </div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/report.js') }}"></script>
+
+</body>
+
+</html>
